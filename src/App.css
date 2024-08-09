@@ -12,3 +12,11 @@
   white-space: normal;
   text-wrap: balance;
 }
+
+.nav_flex {
+  display: flex;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  gap: 1rem;
+}
