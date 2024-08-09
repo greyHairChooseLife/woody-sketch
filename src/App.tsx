@@ -1,35 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <h1>Woody Sketch</h1>
+      <p className="item_description">
+        우디스케치(Woody sketch)는 목공예를 즐기고 인테리어에 관심 있는 이들을
+        위한 목공 셀프 디자인 플랫폼입니다. 고객들은 인터넷 웹사이트나 휴대폰
+        앱을 통해 자신만의 목공품을 디자인할 수 있으며, 이를 주문 제작할 수
+        있습니다. 이 서비스는 전자상거래와 커스터마이징 서비스를 결합하여 양방향
+        소통 중심의 고객 만족 경영을 추구합니다.
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
