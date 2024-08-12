@@ -11,13 +11,17 @@ function App() {
   const changePage = (page: PageMode) => setPageMode(page);
 
   return (
-    <>
-      <div className="nav_flex">
-        <button onClick={() => changePage("home")}>home</button>
-        <button onClick={() => changePage("other")}>other</button>
+    <div>
+      <div className="nav_content">
+        <div className="nav_flex">
+          <button onClick={() => changePage("home")}>home</button>
+          <button onClick={() => changePage("other")}>other</button>
+        </div>
       </div>
-      {pageMode === "home" ? <Home /> : <Other />}
-    </>
+      <div className="body_content">
+        {pageMode === "home" ? <Home /> : <Other />}
+      </div>
+    </div>
   );
 }
 

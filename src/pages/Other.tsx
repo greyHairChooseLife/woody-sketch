@@ -1,9 +1,9 @@
 function Other() {
   return (
-    <div>
+    <>
       <h1>Other</h1>
-      <p>Other 페이지 입니다.</p>
-    </div>
+      <p className="item_description">Other 페이지 입니다.</p>
+    </>
   );
 }
 
