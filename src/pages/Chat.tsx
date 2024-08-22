@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import UserThumbnail from "../components/UserThumbnail";
 import dummyUser from "../assets/dummyUser.json";
 import dummyMessages from "../assets/dummyMessages.json";
-import "./ChatPage.css";
+import "./Chat.css";
 import { FaPaperPlane } from "react-icons/fa";
 
 function Chat() {

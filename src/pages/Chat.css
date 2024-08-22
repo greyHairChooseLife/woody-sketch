@@ -3,19 +3,17 @@
   flex-direction: column;
   gap: 2rem;
   height: 90vh;
-  width: 95%;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   max-height: 700px;
 }
 
 .chat_section1 {
   height: 4rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
 }
 .chat_section1 > div > * {
   display: inline-block;
   margin-right: 0.5rem;
+  font-size: 1.2rem;
 }
 .chat_section1 span {
   font-weight: bold;
