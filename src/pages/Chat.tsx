@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { CgProfile } from "react-icons/cg";
-import { FaPaperPlane } from "react-icons/fa";
+import UserThumbnail from "../components/UserThumbnail";
 import dummyUser from "../assets/dummyUser.json";
 import dummyMessages from "../assets/dummyMessages.json";
 import "./ChatPage.css";
+import { FaPaperPlane } from "react-icons/fa";
 
 function Chat() {
   const [msgObjects, setMsgObjects] = useState(dummyMessages);
@@ -37,7 +37,10 @@ function Chat() {
     <>
       <div className="chat_layout">
         <div className="chat_section1">
-          <CgProfile className="profile_icon" /> <span>{dummyUser.name}</span>님
+          <div>
+            <UserThumbnail src={dummyUser.thumbnail} size="small" />{" "}
+            <span>{dummyUser.name}</span>님
+          </div>
         </div>
         <div className="chat_section2" ref={chatContainerRef}>
           {msgObjects.map((msgObj) => (
