@@ -112,6 +112,7 @@ function Work() {
     setShapes([...shapes, newShape]);
     setNewShape(null);
     setIsDrawing(false);
+    setSelectedTool(null);
   };
 
   const handleSelectShape = (index: number) => {
