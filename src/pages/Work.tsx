@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Stage, Layer, Rect, Circle, Transformer } from "react-konva";
 import Konva from "konva";
 import UserThumbnail from "../components/UserThumbnail";
+import GridLayer from "../components/GridLayer";
 import dummyUser from "../assets/dummyUser.json";
 import "./Work.css";
 import { PiRectangleDashedBold } from "react-icons/pi";
@@ -163,6 +164,7 @@ function Work() {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
           >
+            <GridLayer stageSize={stageSize} gridSpacing={50} />
             <Layer>
               {shapes.map((shape, index) => {
                 if (shape.type === "rectangle") {
