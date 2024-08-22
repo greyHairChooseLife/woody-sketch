@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
-import { Stage, Layer, Rect, Circle, KonvaEventObject } from "react-konva";
+import { Stage, Layer, Rect, Circle } from "react-konva";
+import Konva from "konva";
 import UserThumbnail from "../components/UserThumbnail";
 import dummyUser from "../assets/dummyUser.json";
 import "./Work.css";
-import ColoredRect from "../shapes/Circle";
 
 type Tool = "rectangle" | "circle" | null;
 interface Shape {
@@ -22,11 +22,14 @@ function Work() {
   const [newShape, setNewShape] = useState<Shape | null>(null);
   const stageRef = useRef(null);
 
-  const handleMouseDown = (e: KonvaEventObject<MouseEvent>) => {
+  const handleMouseDown = (e: Konva.KonvaEventObject<MouseEvent>) => {
     if (!selectedTool) return;
 
     setIsDrawing(true);
-    const { x, y } = e.target.getStage().getPointerPosition() || { x: 0, y: 0 };
+    const { x, y } = e?.target?.getStage()?.getPointerPosition() || {
+      x: 0,
+      y: 0,
+    };
 
     if (selectedTool === "rectangle")
       setNewShape({ type: selectedTool, x, y, width: 0, height: 0 });
@@ -34,10 +37,13 @@ function Work() {
       setNewShape({ type: selectedTool, x, y, radius: 0 });
   };
 
-  const handleMouseMove = (e: KonvaEventObject<MouseEvent>) => {
+  const handleMouseMove = (e: Konva.KonvaEventObject<MouseEvent>) => {
     if (!isDrawing || !newShape) return;
 
-    const { x, y } = e.target.getStage().getPointerPosition() || { x: 0, y: 0 };
+    const { x, y } = e?.target?.getStage()?.getPointerPosition() || {
+      x: 0,
+      y: 0,
+    };
 
     if (newShape.type === "rectangle")
       setNewShape({
