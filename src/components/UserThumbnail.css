@@ -2,6 +2,7 @@
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
+  border: solid 3px var(--el);
 }
 
 .user_thumbnail > img {
@@ -13,7 +14,7 @@
   height: 3rem;
 }
 .small_thumbnail:hover {
-  border: solid 3px yellow;
+  border: solid 3px var(--pt);
 }
 
 .large_thumbnail {

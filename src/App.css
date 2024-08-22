@@ -29,8 +29,9 @@
 }
 
 .activeNav {
-  background-color: yellow;
-  color: black;
+  background-color: var(--pt);
+  color: var(--bg);
+  font-size: 1.3rem;
 }
 
 .body_content {

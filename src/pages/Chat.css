@@ -79,7 +79,7 @@
   margin-left: 1rem;
 }
 .admin_message > div:nth-child(2) {
-  background-color: lightgrey;
+  background-color: var(--sub);
 }
 
 .user_message {
