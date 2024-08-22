@@ -32,37 +32,6 @@
   gap: 0.5rem;
 }
 
-.colorPickBtn {
-  font-size: 0;
-  width: 3rem;
-  height: 3rem;
-  border: 1px solid white;
-}
-.colorPickBtn:hover {
-  transform: scale(0.9);
-}
-
-.black_Btn {
-  background: black;
-}
-.black_Btn:hover {
-  background: black;
-}
-.red_Btn {
-  background: red;
-}
-.red_Btn:hover {
-  background: red;
-}
-.blue_Btn {
-  background: blue;
-}
-.blue_Btn:hover {
-  background: blue;
-}
-.green_Btn {
-  background: green;
-}
-.green_Btn:hover {
-  background: green;
+.canvas_stage {
+  background-color: white;
 }
