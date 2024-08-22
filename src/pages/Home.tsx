@@ -1,6 +1,6 @@
 import { PiTreeFill } from "react-icons/pi";
 import { HiMiniMagnifyingGlassCircle } from "react-icons/hi2";
-import "./HomePages.css";
+import "./Home.css";
 import designObjects from "../assets/designObjects.json";
 
 function Home() {
