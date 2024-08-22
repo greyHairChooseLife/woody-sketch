@@ -1,0 +1,68 @@
+.work_layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5rem auto;
+  gap: 1rem;
+}
+
+.work_section1 > div > * {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+.work_section1 span {
+  font-weight: bold;
+}
+
+.work_section2 {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.work_section2 > div:nth-child(1) {
+  flex: 9;
+}
+
+.work_section2 > div:nth-child(2) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.colorPickBtn {
+  font-size: 0;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid white;
+}
+.colorPickBtn:hover {
+  transform: scale(0.9);
+}
+
+.black_Btn {
+  background: black;
+}
+.black_Btn:hover {
+  background: black;
+}
+.red_Btn {
+  background: red;
+}
+.red_Btn:hover {
+  background: red;
+}
+.blue_Btn {
+  background: blue;
+}
+.blue_Btn:hover {
+  background: blue;
+}
+.green_Btn {
+  background: green;
+}
+.green_Btn:hover {
+  background: green;
+}
