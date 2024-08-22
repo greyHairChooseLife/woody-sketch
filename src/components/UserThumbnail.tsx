@@ -4,7 +4,7 @@ type PageMode = "home" | "work" | "chat" | "profile";
 
 type UserThumbnailProps = {
   src: string;
-  setPageMode: (page: PageMode) => void;
+  setPageMode?: (page: PageMode) => void;
   size: "small" | "large";
 };
 const UserThumbnail = ({ src, setPageMode, size }: UserThumbnailProps) => {
@@ -12,7 +12,7 @@ const UserThumbnail = ({ src, setPageMode, size }: UserThumbnailProps) => {
     <div
       className={`${size}_thumbnail user_thumbnail`}
       onClick={() => {
-        setPageMode("profile");
+        setPageMode && setPageMode("profile");
       }}
     >
       <img src={src} />

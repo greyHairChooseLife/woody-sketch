@@ -15,3 +15,8 @@
 .small_thumbnail:hover {
   border: solid 3px yellow;
 }
+
+.large_thumbnail {
+  width: 7rem;
+  height: 7rem;
+}

@@ -1,0 +1,21 @@
+.profile_layout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.profile_section1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thumbnail_container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile_section1 > div:nth-child(2) {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}

@@ -1,8 +1,18 @@
+import UserThumbnail from "../components/UserThumbnail";
+import dummyUser from "../assets/dummyUser.json";
+import "./Profile.css";
+
 function Profile() {
   return (
     <>
-      <h1>Profile</h1>
-      <p className="item_description">Profile 페이지 입니다.</p>
+      <div className="profile_layout">
+        <div className="profile_section1">
+          <div className="thumbnail_container">
+            <UserThumbnail src={dummyUser.thumbnail} size="large" />
+          </div>
+          <div>{dummyUser.name}</div>
+        </div>
+      </div>
     </>
   );
 }
