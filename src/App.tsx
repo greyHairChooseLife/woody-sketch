@@ -4,6 +4,7 @@ import Work from "./pages/Work";
 import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
 import "./App.css";
+import { CgProfile } from "react-icons/cg";
 
 type PageMode = "home" | "work" | "chat" | "profile";
 
@@ -11,14 +12,22 @@ function App() {
   const [pageMode, setPageMode] = useState<PageMode>("home");
 
   const changePage = (page: PageMode) => setPageMode(page);
+  const onClickProfileIcon = () => setPageMode("profile");
 
   return (
-    <div className="page_layout">
-      <Nav pageMode={pageMode} setPageMode={changePage} />
-      <div className="body_content">
-        <Page pageMode={pageMode} />
+    <>
+      <div className="page_layout">
+        <Nav pageMode={pageMode} setPageMode={changePage} />
+        <div className="body_content">
+          <Page pageMode={pageMode} />
+        </div>
       </div>
-    </div>
+      {pageMode === "home" && (
+        <div className="profile_icon_container">
+          <CgProfile className="profile_icon" onClick={onClickProfileIcon} />
+        </div>
+      )}
+    </>
   );
 }
 

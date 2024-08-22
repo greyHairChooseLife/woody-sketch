@@ -1,6 +1,5 @@
 #root {
   max-width: 1280px;
-  text-align: center;
 }
 
 .page_layout {
@@ -35,6 +34,7 @@
 .body_content {
   flex: 9;
   position: relative;
+  padding: 0 2rem;
 }
 
 .item_description {
@@ -42,4 +42,15 @@
   word-break: keep-all;
   white-space: normal;
   text-wrap: balance;
+}
+
+.profile_icon_container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.5rem;
+  font-size: 3rem;
+}
+.profile_icon {
+  cursor: pointer;
 }

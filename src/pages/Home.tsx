@@ -1,20 +1,61 @@
 import { PiTreeFill } from "react-icons/pi";
+import { HiMiniMagnifyingGlassCircle } from "react-icons/hi2";
+import "./Pages.css";
+import designObjects from "../assets/designObjects.json";
 
 function Home() {
+  const todayRecommendObj = designObjects.filter(
+    (dObj) => dObj.type === "todayRecommend"
+  );
+  const recentlyViewedObj = designObjects.filter(
+    (dObj) => dObj.type === "recentlyViewed"
+  );
+
   return (
     <>
-      <h1>
-        <PiTreeFill /> Woody Sketch
-      </h1>
-      <p className="item_description">
-        우디스케치(Woody sketch)는 목공예를 즐기고 인테리어에 관심 있는 이들을
-        위한 목공 셀프 디자인 플랫폼입니다. 고객들은 인터넷 웹사이트나 휴대폰
-        앱을 통해 자신만의 목공품을 디자인할 수 있으며, 이를 주문 제작할 수
-        있습니다. 이 서비스는 전자상거래와 커스터마이징 서비스를 결합하여 양방향
-        소통 중심의 고객 만족 경영을 추구합니다.
-      </p>
+      <div className="home_layout">
+        <div className="home_section1">
+          <h1>
+            <PiTreeFill className="tree_icon" />
+            Woody Sketch
+          </h1>
+        </div>
+        <div className="home_section2">
+          <label>
+            <HiMiniMagnifyingGlassCircle className="glass_icon" />
+            <input type="text" placeholder="디자인 검색 ..." />
+          </label>
+        </div>
+        <div className="home_section3">
+          <Designs title="오늘의 추천" elements={todayRecommendObj} />
+          <Designs
+            title="최근에 본 상품과 비슷한 디자인"
+            elements={recentlyViewedObj}
+          />
+        </div>
+      </div>
     </>
   );
 }
+
+type DesignsProps = {
+  title: string;
+  elements: { title: string; src: string }[];
+};
+const Designs = ({ title, elements }: DesignsProps) => {
+  return (
+    <div className="designs_container">
+      <h2>{title}</h2>
+      <div className="designs">
+        {elements.map((element) => (
+          <div className="design">
+            {element.title}
+            <img src={element.src} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Home;

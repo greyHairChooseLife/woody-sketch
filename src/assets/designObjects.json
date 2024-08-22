@@ -1,0 +1,32 @@
+[
+  {
+    "title": "의자",
+    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "type": "todayRecommend"
+  },
+  {
+    "title": "스피커",
+    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "type": "todayRecommend"
+  },
+  {
+    "title": "시계",
+    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "type": "todayRecommend"
+  },
+  {
+    "title": "손잡이 의자",
+    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "type": "recentlyViewed"
+  },
+  {
+    "title": "스피커",
+    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "type": "recentlyViewed"
+  },
+  {
+    "title": "조명",
+    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "type": "recentlyViewed"
+  }
+]
