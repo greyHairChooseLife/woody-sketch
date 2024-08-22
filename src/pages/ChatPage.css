@@ -87,3 +87,14 @@
   display: block;
   background-color: yellow;
 }
+
+.chat_section2 {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: auto;
+  height: 100%;
+}
+.chat_section2::-webkit-scrollbar,
+.chat_section2::-webkit-scrollbar-button {
+  display: none;
+}

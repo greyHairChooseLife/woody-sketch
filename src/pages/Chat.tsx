@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaPaperPlane } from "react-icons/fa";
 import dummyUser from "../assets/dummyUser.json";
@@ -26,13 +26,20 @@ function Chat() {
     setNewMessage("");
   };
 
+  const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (chatContainerRef.current === null) return;
+    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+  }, [msgObjects]);
+
   return (
     <>
       <div className="chat_layout">
         <div className="chat_section1">
           <CgProfile className="profile_icon" /> <span>{dummyUser.name}</span>님
         </div>
-        <div className="chat_section2">
+        <div className="chat_section2" ref={chatContainerRef}>
           {msgObjects.map((msgObj) => (
             <ChatElement
               key={msgObj.order}
