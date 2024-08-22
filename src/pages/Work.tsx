@@ -8,6 +8,7 @@ import "./Work.css";
 import { PiRectangleDashedBold } from "react-icons/pi";
 import { TbCircleDotted } from "react-icons/tb";
 import { FaEraser } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
 
 type Tool = "rectangle" | "circle" | null;
 interface Shape {
@@ -31,7 +32,7 @@ function Work() {
   );
   const transformerRef = useRef<any>(null);
   const shapeRef = useRef<any>(null);
-  const stageRef = useRef(null);
+  const stageRef = useRef<any>(null);
   const stageContainerRef = useRef(null);
   const [stageSize, setStageSize] = useState({ width: 0, height: 0 });
 
@@ -145,6 +146,17 @@ function Work() {
     setShapes(updatedShapes);
   };
 
+  const handleDownload = () => {
+    if (!stageRef.current) return;
+    const dataURL = stageRef.current.toDataURL();
+    const link = document.createElement("a");
+    link.href = dataURL;
+    link.download = "Woody Image.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <div className="work_layout">
@@ -213,6 +225,7 @@ function Work() {
               selectedTool={selectedTool}
               setSelectedTool={setSelectedTool}
               handleDeleteShape={handleDeleteShape}
+              handleDownload={handleDownload}
             />
           </div>
         </div>
@@ -225,11 +238,13 @@ type ToolbarProps = {
   selectedTool: Tool;
   setSelectedTool: (tool: Tool) => void;
   handleDeleteShape: () => void;
+  handleDownload: () => void;
 };
 const Toolbar = ({
   selectedTool,
   setSelectedTool,
   handleDeleteShape,
+  handleDownload,
 }: ToolbarProps) => {
   return (
     <div className="tool_bar_container">
@@ -252,6 +267,10 @@ const Toolbar = ({
       <button className="erase_btn" onClick={handleDeleteShape}>
         <span>지우기</span>
         <FaEraser />
+      </button>
+      <button className="download_btn" onClick={handleDownload}>
+        <FiDownload />
+        <div>다운로드</div>
       </button>
     </div>
   );

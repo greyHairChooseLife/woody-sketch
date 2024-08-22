@@ -77,3 +77,13 @@
   border: 2px solid black;
   color: black !important;
 }
+
+.download_btn {
+  background-color: lightblue;
+  border: 2px solid black;
+  color: blue !important;
+  line-height: 1.5rem !important;
+}
+.download_btn > div {
+  font-size: 1rem !important;
+}
