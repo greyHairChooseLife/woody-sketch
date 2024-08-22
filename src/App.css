@@ -49,9 +49,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1.5rem;
+  padding: 2rem;
   font-size: 3rem;
-}
-.profile_icon {
-  cursor: pointer;
 }

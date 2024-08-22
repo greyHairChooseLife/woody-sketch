@@ -1,0 +1,17 @@
+.user_thumbnail {
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user_thumbnail > img {
+  width: 100%;
+}
+
+.small_thumbnail {
+  width: 3rem;
+  height: 3rem;
+}
+.small_thumbnail:hover {
+  border: solid 3px yellow;
+}
