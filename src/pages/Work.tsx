@@ -10,6 +10,7 @@ interface Shape {
   type: Tool;
   x: number;
   y: number;
+  fillColor?: string;
   width?: number;
   height?: number;
   radius?: number;
@@ -20,6 +21,9 @@ function Work() {
   const [shapes, setShapes] = useState<Shape[]>([]);
   const [isDrawing, setIsDrawing] = useState(false);
   const [newShape, setNewShape] = useState<Shape | null>(null);
+  const [selectedShapeIndex, setSelectedShapeIndex] = useState<number | null>(
+    null
+  );
   const stageRef = useRef(null);
 
   const handleMouseDown = (e: Konva.KonvaEventObject<MouseEvent>) => {
@@ -67,6 +71,18 @@ function Work() {
     setSelectedTool(null);
   };
 
+  const handleSelectShape = (index: number) => {
+    if (selectedShapeIndex === index) setSelectedShapeIndex(null);
+    else setSelectedShapeIndex(index);
+  };
+
+  const handleDeleteShape = () => {
+    if (selectedShapeIndex === null) return;
+    const newShapes = shapes.filter((_, index) => index !== selectedShapeIndex);
+    setShapes(newShapes);
+    setSelectedShapeIndex(null);
+  };
+
   return (
     <>
       <div className="work_layout">
@@ -96,9 +112,11 @@ function Work() {
                       y={shape.y}
                       width={shape.width}
                       height={shape.height}
-                      fill="red"
-                      opacity={0.5}
+                      fill={shape.fillColor || "grey"}
                       draggable
+                      onClick={() => handleSelectShape(index)}
+                      strokeWidth={selectedShapeIndex === index ? 10 : 1}
+                      stroke={selectedShapeIndex === index ? "yellow" : "black"}
                     />
                   );
                 } else if (shape.type === "circle") {
@@ -108,9 +126,11 @@ function Work() {
                       x={shape.x}
                       y={shape.y}
                       radius={shape.radius}
-                      fill="blue"
-                      opacity={0.5}
+                      fill={shape.fillColor || "grey"}
                       draggable
+                      onClick={() => handleSelectShape(index)}
+                      strokeWidth={selectedShapeIndex === index ? 10 : 1}
+                      stroke={selectedShapeIndex === index ? "yellow" : "black"}
                     />
                   );
                 }
@@ -125,7 +145,10 @@ function Work() {
             </Layer>
           </Stage>
           <div>
-            <Toolbar setSelectedTool={setSelectedTool} />
+            <Toolbar
+              setSelectedTool={setSelectedTool}
+              handleDeleteShape={handleDeleteShape}
+            />
           </div>
         </div>
       </div>
@@ -135,12 +158,14 @@ function Work() {
 
 type ToolbarProps = {
   setSelectedTool: (tool: Tool) => void;
+  handleDeleteShape: () => void;
 };
-const Toolbar = ({ setSelectedTool }: ToolbarProps) => {
+const Toolbar = ({ setSelectedTool, handleDeleteShape }: ToolbarProps) => {
   return (
     <div style={{ marginBottom: "20px" }}>
       <button onClick={() => setSelectedTool("rectangle")}>사각형</button>
       <button onClick={() => setSelectedTool("circle")}>원</button>
+      <button onClick={handleDeleteShape}>지우기</button>
     </div>
   );
 };
