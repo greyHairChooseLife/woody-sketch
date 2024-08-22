@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { Stage, Layer, Rect, Circle } from "react-konva";
+import { useState, useRef, useEffect } from "react";
+import { Stage, Layer, Rect, Circle, Transformer } from "react-konva";
 import Konva from "konva";
 import UserThumbnail from "../components/UserThumbnail";
 import dummyUser from "../assets/dummyUser.json";
@@ -14,6 +14,7 @@ interface Shape {
   width?: number;
   height?: number;
   radius?: number;
+  id: string;
 }
 
 function Work() {
@@ -24,21 +25,45 @@ function Work() {
   const [selectedShapeIndex, setSelectedShapeIndex] = useState<number | null>(
     null
   );
+  const transformerRef = useRef<any>(null);
+  const shapeRef = useRef<any>(null);
   const stageRef = useRef(null);
+
+  useEffect(() => {
+    if (
+      selectedShapeIndex !== null &&
+      transformerRef.current &&
+      shapeRef.current
+    ) {
+      transformerRef.current.nodes([shapeRef.current]);
+      transformerRef.current.getLayer().batchDraw();
+    }
+  }, [selectedShapeIndex]);
 
   const handleMouseDown = (e: Konva.KonvaEventObject<MouseEvent>) => {
     if (!selectedTool) return;
 
     setIsDrawing(true);
-    const { x, y } = e?.target?.getStage()?.getPointerPosition() || {
-      x: 0,
-      y: 0,
-    };
+    const pos = e.target.getStage()?.getPointerPosition();
+    const { x, y } = pos || { x: 0, y: 0 };
 
     if (selectedTool === "rectangle")
-      setNewShape({ type: selectedTool, x, y, width: 0, height: 0 });
+      setNewShape({
+        type: selectedTool,
+        x,
+        y,
+        width: 0,
+        height: 0,
+        id: `rect_${shapes.length}`,
+      });
     else if (selectedTool === "circle")
-      setNewShape({ type: selectedTool, x, y, radius: 0 });
+      setNewShape({
+        type: selectedTool,
+        x,
+        y,
+        radius: 0,
+        id: `circle_${shapes.length}`,
+      });
   };
 
   const handleMouseMove = (e: Konva.KonvaEventObject<MouseEvent>) => {
@@ -83,6 +108,23 @@ function Work() {
     setSelectedShapeIndex(null);
   };
 
+  const handleDragEnd = (e: any) => {
+    const id = e.target.id();
+    const updatedShapes = shapes.map((shape) => {
+      if (shape.id === id) {
+        return {
+          ...shape,
+          x: e.target.x(),
+          y: e.target.y(),
+          width: shape.type === "rectangle" ? e.target.width() : shape.width,
+          height: shape.type === "rectangle" ? e.target.height() : shape.height,
+          radius: shape.type === "circle" ? e.target.radius() : shape.radius,
+        };
+      } else return shape;
+    });
+    setShapes(updatedShapes);
+  };
+
   return (
     <>
       <div className="work_layout">
@@ -108,34 +150,35 @@ function Work() {
                   return (
                     <Rect
                       key={index}
-                      x={shape.x}
-                      y={shape.y}
-                      width={shape.width}
-                      height={shape.height}
+                      {...shape}
+                      ref={selectedShapeIndex === index ? shapeRef : null}
                       fill={shape.fillColor || "grey"}
                       draggable
                       onClick={() => handleSelectShape(index)}
-                      strokeWidth={selectedShapeIndex === index ? 10 : 1}
-                      stroke={selectedShapeIndex === index ? "yellow" : "black"}
+                      onTransformEnd={handleDragEnd}
                     />
                   );
                 } else if (shape.type === "circle") {
                   return (
                     <Circle
                       key={index}
-                      x={shape.x}
-                      y={shape.y}
-                      radius={shape.radius}
+                      {...shape}
+                      ref={selectedShapeIndex === index ? shapeRef : null}
                       fill={shape.fillColor || "grey"}
                       draggable
                       onClick={() => handleSelectShape(index)}
-                      strokeWidth={selectedShapeIndex === index ? 10 : 1}
-                      stroke={selectedShapeIndex === index ? "yellow" : "black"}
+                      onTransformEnd={handleDragEnd}
                     />
                   );
                 }
                 return null;
               })}
+              {selectedShapeIndex !== null && (
+                <Transformer
+                  ref={transformerRef}
+                  boundBoxFunc={(_, newBox) => newBox}
+                />
+              )}
               {newShape && newShape.type === "rectangle" && (
                 <Rect {...newShape} fill="red" opacity={0.5} />
               )}
