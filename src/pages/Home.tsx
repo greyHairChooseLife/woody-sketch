@@ -1,7 +1,11 @@
+import { PiTreeFill } from "react-icons/pi";
+
 function Home() {
   return (
     <>
-      <h1>Woody Sketch</h1>
+      <h1>
+        <PiTreeFill /> Woody Sketch
+      </h1>
       <p className="item_description">
         우디스케치(Woody sketch)는 목공예를 즐기고 인테리어에 관심 있는 이들을
         위한 목공 셀프 디자인 플랫폼입니다. 고객들은 인터넷 웹사이트나 휴대폰

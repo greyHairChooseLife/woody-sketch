@@ -13,7 +13,7 @@ function App() {
   const changePage = (page: PageMode) => setPageMode(page);
 
   return (
-    <div>
+    <div className="page_layout">
       <Nav pageMode={pageMode} setPageMode={changePage} />
       <div className="body_content">
         <Page pageMode={pageMode} />
