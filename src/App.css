@@ -31,7 +31,6 @@
 .activeNav {
   background-color: var(--pt);
   color: var(--bg);
-  font-size: 1.3rem;
 }
 
 .body_content {
