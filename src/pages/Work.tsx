@@ -4,6 +4,9 @@ import Konva from "konva";
 import UserThumbnail from "../components/UserThumbnail";
 import dummyUser from "../assets/dummyUser.json";
 import "./Work.css";
+import { PiRectangleDashedBold } from "react-icons/pi";
+import { TbCircleDotted } from "react-icons/tb";
+import { FaEraser } from "react-icons/fa";
 
 type Tool = "rectangle" | "circle" | null;
 interface Shape {
@@ -28,6 +31,22 @@ function Work() {
   const transformerRef = useRef<any>(null);
   const shapeRef = useRef<any>(null);
   const stageRef = useRef(null);
+  const stageContainerRef = useRef(null);
+  const [stageSize, setStageSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const updateStageSize = () => {
+      if (stageContainerRef.current) {
+        const { offsetWidth, offsetHeight } = stageContainerRef.current;
+        setStageSize({ width: offsetWidth, height: offsetHeight });
+      }
+    };
+    updateStageSize();
+    window.addEventListener("resize", updateStageSize);
+    return () => {
+      window.removeEventListener("resize", updateStageSize);
+    };
+  }, []);
 
   useEffect(() => {
     if (
@@ -93,7 +112,6 @@ function Work() {
     setShapes([...shapes, newShape]);
     setNewShape(null);
     setIsDrawing(false);
-    setSelectedTool(null);
   };
 
   const handleSelectShape = (index: number) => {
@@ -134,11 +152,11 @@ function Work() {
             <span>{dummyUser.name}</span>님
           </div>
         </div>
-        <div className="work_section2">
+        <div className="work_section2" ref={stageContainerRef}>
           <Stage
             className="canvas_stage"
-            width={window.innerWidth * 0.7}
-            height={window.innerHeight * 0.7}
+            width={stageSize.width}
+            height={stageSize.height}
             ref={stageRef}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
@@ -180,15 +198,16 @@ function Work() {
                 />
               )}
               {newShape && newShape.type === "rectangle" && (
-                <Rect {...newShape} fill="red" opacity={0.5} />
+                <Rect {...newShape} fill="yellow" opacity={0.4} />
               )}
               {newShape && newShape.type === "circle" && (
-                <Circle {...newShape} fill="red" opacity={0.5} />
+                <Circle {...newShape} fill="yellow" opacity={0.4} />
               )}
             </Layer>
           </Stage>
           <div>
             <Toolbar
+              selectedTool={selectedTool}
               setSelectedTool={setSelectedTool}
               handleDeleteShape={handleDeleteShape}
             />
@@ -200,15 +219,37 @@ function Work() {
 }
 
 type ToolbarProps = {
+  selectedTool: Tool;
   setSelectedTool: (tool: Tool) => void;
   handleDeleteShape: () => void;
 };
-const Toolbar = ({ setSelectedTool, handleDeleteShape }: ToolbarProps) => {
+const Toolbar = ({
+  selectedTool,
+  setSelectedTool,
+  handleDeleteShape,
+}: ToolbarProps) => {
   return (
-    <div style={{ marginBottom: "20px" }}>
-      <button onClick={() => setSelectedTool("rectangle")}>사각형</button>
-      <button onClick={() => setSelectedTool("circle")}>원</button>
-      <button onClick={handleDeleteShape}>지우기</button>
+    <div className="tool_bar_container">
+      <button
+        className={
+          selectedTool === "rectangle" ? "selected_tool_btn" : "tool_btn"
+        }
+        onClick={() => setSelectedTool("rectangle")}
+      >
+        <span>사각형</span>
+        <PiRectangleDashedBold />
+      </button>
+      <button
+        className={selectedTool === "circle" ? "selected_tool_btn" : "tool_btn"}
+        onClick={() => setSelectedTool("circle")}
+      >
+        <span>원</span>
+        <TbCircleDotted />
+      </button>
+      <button className="erase_btn" onClick={handleDeleteShape}>
+        <span>지우기</span>
+        <FaEraser />
+      </button>
     </div>
   );
 };
