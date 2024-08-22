@@ -48,7 +48,7 @@ const Designs = ({ title, elements }: DesignsProps) => {
       <h2>{title}</h2>
       <div className="designs">
         {elements.map((element) => (
-          <div className="design">
+          <div key={element.title} className="design">
             {element.title}
             <img src={element.src} />
           </div>
