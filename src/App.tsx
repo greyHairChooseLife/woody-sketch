@@ -21,16 +21,16 @@ function App() {
         <div className="body_content">
           <Page pageMode={pageMode} />
         </div>
+        {pageMode === "home" && (
+          <div className="profile_icon_container">
+            <UserThumbnail
+              src={dummyUser.thumbnail}
+              setPageMode={setPageMode}
+              size="small"
+            />
+          </div>
+        )}
       </div>
-      {pageMode === "home" && (
-        <div className="profile_icon_container">
-          <UserThumbnail
-            src={dummyUser.thumbnail}
-            setPageMode={setPageMode}
-            size="small"
-          />
-        </div>
-      )}
     </>
   );
 }

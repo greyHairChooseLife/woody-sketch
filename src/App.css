@@ -5,6 +5,7 @@
 
 .page_layout {
   display: flex;
+  position: relative;
 }
 
 .nav_content {
@@ -38,17 +39,9 @@
   padding: 0 2rem;
 }
 
-.item_description {
-  margin: 2rem 3rem;
-  word-break: keep-all;
-  white-space: normal;
-  text-wrap: balance;
-}
-
 .profile_icon_container {
   position: absolute;
-  top: 0;
   right: 0;
-  padding: 2rem;
+  margin-top: 2rem;
   font-size: 3rem;
 }
