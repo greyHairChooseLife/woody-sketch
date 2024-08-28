@@ -23,6 +23,10 @@ input {
 .home_section1 > div:nth-child(2) {
   flex: 3;
   text-align: center;
+  font-size: 1.5rem;
+}
+.home_section1 > div:nth-child(2) > h1 {
+  margin: 0 0 1rem 0;
 }
 
 .home_section2 {
