@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Chat from "./pages/Chat";
@@ -17,19 +17,21 @@ function App() {
   return (
     <>
       <div className="page_layout">
-        <Nav pageMode={pageMode} setPageMode={changePage} />
-        <div className="body_content">
-          <Page pageMode={pageMode} />
+        <div>
+          <Nav pageMode={pageMode} setPageMode={changePage} />
+          {pageMode === "home" && (
+            <div className="profile_icon_container">
+              <UserThumbnail
+                src={dummyUser.thumbnail}
+                setPageMode={setPageMode}
+                size="small"
+              />
+            </div>
+          )}
         </div>
-        {pageMode === "home" && (
-          <div className="profile_icon_container">
-            <UserThumbnail
-              src={dummyUser.thumbnail}
-              setPageMode={setPageMode}
-              size="small"
-            />
-          </div>
-        )}
+        <div className="body_content">
+          <Page pageMode={pageMode} setPageMode={setPageMode} />
+        </div>
       </div>
     </>
   );
@@ -72,8 +74,14 @@ const Nav = ({ pageMode, setPageMode }: NavProps) => {
   );
 };
 
-const Page = ({ pageMode }: { pageMode: PageMode }) => {
-  if (pageMode === "home") return <Home />;
+const Page = ({
+  pageMode,
+  setPageMode,
+}: {
+  pageMode: PageMode;
+  setPageMode: Dispatch<SetStateAction<PageMode>>;
+}) => {
+  if (pageMode === "home") return <Home setPageMode={setPageMode} />;
   else if (pageMode === "work") return <Work />;
   else if (pageMode === "chat") return <Chat />;
   else if (pageMode === "profile") return <Profile />;
