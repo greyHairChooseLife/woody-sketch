@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap");
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,22 +32,8 @@ body {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1.1rem;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--el);
-  cursor: pointer;
-  transition: border-color 0.25s;
-  outline: none;
-  color: white;
-}
-button:hover {
-  background-color: var(--pt);
-}
-button:focus,
-button:focus-visible {
-  outline: none;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.7rem;
 }

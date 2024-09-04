@@ -27,7 +27,7 @@
   background: linear-gradient(to right, var(--bg), white);
 }
 .nav_content {
-  width: 35%;
+  width: 100%;
 }
 .profile_icon_container {
   font-size: 3rem;
@@ -37,8 +37,18 @@
 .nav_flex {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
   width: 100%;
+  justify-content: space-between;
+  padding: 0 1.5vw;
+}
+
+.nav_header {
+  font-family: "Hi Melody", sans-serif;
+  font-size: 3rem;
+}
+.nav_buttons {
+  display: flex;
+  gap: 3rem;
 }
 
 .nav_flex > button {
@@ -48,10 +58,21 @@
   writing-mode: horizontal-tb;
   white-space: nowrap;
 }
-
-.activeNav {
-  background-color: var(--pt);
-  color: var(--bg);
+.nav_icon_div {
+  display: flex;
+  background-color: transparent;
+  gap: 2rem;
+  align-items: center;
+}
+.nav_icons {
+  color: grey;
+  font-size: 2.5rem;
+}
+.nav_icons_FaMagnifyingGlass {
+  font-size: 2rem !important;
+}
+.nav_icons_IoMenu {
+  font-size: 3rem !important;
 }
 
 .body_content {

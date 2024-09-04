@@ -21,18 +21,7 @@ function Home({ setPageMode }: HomeProps) {
     <>
       <div className="home_layout">
         <div className="home_section1">
-          <div>
-            <label>
-              <HiMiniMagnifyingGlassCircle className="glass_icon" />
-              <input type="text" placeholder="디자인 검색 ..." />
-            </label>
-          </div>
-          <div>
-            <h1>
-              <PiTreeFill className="tree_icon" />
-              Woody Sketch
-            </h1>
-          </div>
+          <h1>Woody Sketch</h1>
         </div>
         <div className="home_section2">
           <BigFrontElement setPageMode={setPageMode} />

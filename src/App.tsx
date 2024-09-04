@@ -6,6 +6,9 @@ import Profile from "./pages/Profile";
 import UserThumbnail from "./components/UserThumbnail";
 import "./App.css";
 import dummyUser from "./assets/dummyUser.json";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { IoMenu } from "react-icons/io5";
+import { AiOutlineUser } from "react-icons/ai";
 
 type PageMode = "home" | "work" | "chat" | "profile";
 
@@ -19,15 +22,6 @@ function App() {
       <div className="page_layout">
         <div>
           <Nav pageMode={pageMode} setPageMode={changePage} />
-          {pageMode === "home" && (
-            <div className="profile_icon_container">
-              <UserThumbnail
-                src={dummyUser.thumbnail}
-                setPageMode={setPageMode}
-                size="small"
-              />
-            </div>
-          )}
         </div>
         <div className="body_content">
           <Page pageMode={pageMode} setPageMode={setPageMode} />
@@ -45,30 +39,44 @@ const Nav = ({ pageMode, setPageMode }: NavProps) => {
   return (
     <div className="nav_content">
       <div className="nav_flex">
-        <button
-          className={pageMode === "home" ? "activeNav" : ""}
-          onClick={() => setPageMode("home")}
-        >
-          홈
-        </button>
-        <button
-          className={pageMode === "work" ? "activeNav" : ""}
-          onClick={() => setPageMode("work")}
-        >
-          작업
-        </button>
-        <button
-          className={pageMode === "chat" ? "activeNav" : ""}
-          onClick={() => setPageMode("chat")}
-        >
-          채팅
-        </button>
-        <button
-          className={pageMode === "profile" ? "activeNav" : ""}
-          onClick={() => setPageMode("profile")}
-        >
-          프로필
-        </button>
+        <div className="nav_header">Woody Sketch</div>
+        <div className="nav_buttons">
+          <button
+            className={pageMode === "home" ? "activeNav" : ""}
+            onClick={() => setPageMode("home")}
+          >
+            스타일
+          </button>
+          <button
+            className={pageMode === "work" ? "activeNav" : ""}
+            onClick={() => setPageMode("work")}
+          >
+            전제품
+          </button>
+          <button
+            className={pageMode === "chat" ? "activeNav" : ""}
+            onClick={() => setPageMode("chat")}
+          >
+            제품디자인
+          </button>
+          <button
+            className={pageMode === "profile" ? "activeNav" : ""}
+            onClick={() => setPageMode("profile")}
+          >
+            제작현황
+          </button>
+        </div>
+        <div className="nav_icon_div">
+          <div>
+            <FaMagnifyingGlass className="nav_icons nav_icons_FaMagnifyingGlass" />
+          </div>
+          <div>
+            <AiOutlineUser className="nav_icons nav_icons_AiOutlineUser" />
+          </div>
+          <div>
+            <IoMenu className="nav_icons nav_icons_IoMenu" />
+          </div>
+        </div>
       </div>
     </div>
   );

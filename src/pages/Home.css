@@ -24,9 +24,11 @@ input {
   flex: 3;
   text-align: center;
   font-size: 1.5rem;
+  font-family: "Hi Melody", sans-serif;
 }
 .home_section1 > div:nth-child(2) > h1 {
   margin: 0 0 1rem 0;
+  font-size: 13rem;
 }
 
 .home_section2 {
