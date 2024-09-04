@@ -3,16 +3,17 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --bg: #f4f3ea;
+  --bg: #73ea84;
   --sub: #cbd0d8;
   --el: #333d51;
   --pt: #d3ac2b;
+  --bt: #004111;
 
   color-scheme: light dark;
   /* color: rgba(255, 255, 255, 0.87); */
   /* background-color: #242424; */
   color: var(--el);
-  background-color: var(--bg);
+  background: linear-gradient(to right, var(--bg), white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

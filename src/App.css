@@ -11,6 +11,8 @@
   width: 100%;
   max-width: 100%;
 }
+
+/* 네비게이션 */
 .page_layout > div:nth-child(1) {
   display: flex;
   max-width: 1920px;
@@ -22,7 +24,7 @@
   top: 0;
   padding: 2vw;
   padding-top: 2rem;
-  background-color: var(--bg);
+  background: linear-gradient(to right, var(--bg), white);
 }
 .nav_content {
   width: 35%;
