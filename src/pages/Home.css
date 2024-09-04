@@ -80,13 +80,12 @@ input {
 }
 .home_page_right img {
   position: absolute;
-  width: 45%;
-  height: 45%;
+  width: 40vw;
+  height: 70vh;
   right: 0;
   rotate: 7deg;
   margin-top: -18rem;
   margin-right: 0rem;
-  z-index: 1000;
 }
 
 .tree_icon,
@@ -99,14 +98,25 @@ input {
   cursor: pointer;
 }
 
+.home_design_container {
+  margin-top: 20rem;
+  margin-bottom: 5rem;
+}
 .designs_container {
   margin-top: 5rem;
+}
+.designs_container h2 {
+  font-size: 1.2rem;
+  font-weight: 800 !important;
+  font-style: normal;
 }
 .designs {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .design {

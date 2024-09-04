@@ -23,11 +23,13 @@ function Home({ setPageMode }: HomeProps) {
         <div className="home_section1" />
         <div className="home_section2">
           <BigFrontElement setPageMode={setPageMode} />
-          <Designs title="오늘의 추천" elements={todayRecommendObj} />
-          <Designs
-            title="최근에 본 상품과 비슷한 디자인"
-            elements={recentlyViewedObj}
-          />
+          <div className="home_design_container">
+            <Designs title="오늘의 추천" elements={todayRecommendObj} />
+            <Designs
+              title="최근에 본 상품과 비슷한 디자인"
+              elements={recentlyViewedObj}
+            />
+          </div>
         </div>
       </div>
     </>
@@ -68,8 +70,8 @@ const Designs = ({ title, elements }: DesignsProps) => {
       <div className="designs">
         {elements.map((element) => (
           <div key={element.title} className="design">
-            {element.title}
             <img src={element.src} />
+            {element.title}
           </div>
         ))}
       </div>
