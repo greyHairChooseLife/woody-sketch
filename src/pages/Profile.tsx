@@ -29,7 +29,7 @@ function Profile() {
           </div>
         </div>
         <div className="profile_layout_right">
-          <RightOne />
+          <RightTwo />
         </div>
       </div>
     </>
@@ -103,7 +103,19 @@ const RightOne = () => {
 const RightTwo = () => {
   return (
     <>
-      <div>two</div>
+      <div className="right-two-layout">
+        <div className="rtl1">꿈꾸는 나무1106님의 블로그</div>
+        <div className="rtl2">
+          <PiUserCircleDuotone className="roll-icon1" />
+          <div>
+            <div>꿈꾸는 나무1106</div>
+            <div>6명의 이웃</div>
+          </div>
+        </div>
+        <div className="rtl3">
+          <img src="src/assets/profilePagePic.png" />
+        </div>
+      </div>
     </>
   );
 };
