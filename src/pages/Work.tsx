@@ -1,9 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Stage, Layer, Rect, Circle, Transformer } from "react-konva";
 import Konva from "konva";
-import UserThumbnail from "../components/UserThumbnail";
 import GridLayer from "../components/GridLayer";
-import dummyUser from "../assets/dummyUser.json";
 import "./Work.css";
 import { PiRectangleDashedBold } from "react-icons/pi";
 import { TbCircleDotted } from "react-icons/tb";
@@ -160,12 +158,7 @@ function Work() {
   return (
     <>
       <div className="work_layout">
-        <div className="work_section1">
-          <div>
-            <UserThumbnail src={dummyUser.thumbnail} size="small" />{" "}
-            <span>{dummyUser.name}</span>님
-          </div>
-        </div>
+        <div className="work_section1"></div>
         <div className="work_section2" ref={stageContainerRef}>
           <Stage
             className="canvas_stage"
@@ -220,7 +213,15 @@ function Work() {
               )}
             </Layer>
           </Stage>
-          <div>
+          <div className="toolbar-left">
+            <button>채색</button>
+            <button>스타일</button>
+          </div>
+          <div className="toolbar-main">
+            <div className="toolbar-top">
+              <button>자동차</button>
+              <button>볼펜</button>
+            </div>
             <Toolbar
               selectedTool={selectedTool}
               setSelectedTool={setSelectedTool}
