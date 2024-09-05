@@ -45,10 +45,14 @@
 .nav_header {
   font-family: "Hi Melody", sans-serif;
   font-size: 3rem;
+  cursor: pointer;
 }
 .nav_buttons {
   display: flex;
   gap: 3rem;
+}
+.nav_buttons > div * {
+  cursor: pointer;
 }
 .nav_buttons > div {
   display: flex;
@@ -76,6 +80,9 @@
 .nav_icons_FaMagnifyingGlass {
   font-size: 2rem !important;
 }
+.nav_icons_AiOutlineUser {
+  cursor: pointer;
+}
 .nav_icons_IoMenu {
   font-size: 3rem !important;
 }
@@ -85,4 +92,23 @@
   position: relative;
   margin: 5vh 5vw;
   overflow-x: hidden;
+}
+
+.ct-center {
+  position: fixed;
+  bottom: 2vh;
+  right: 3vw;
+  border: solid 3px var(--bt);
+  border-radius: 50%;
+  background-color: white;
+  padding: 10px;
+}
+
+.ct-center:hover {
+  outline: solid 8px var(--bt);
+  outline-offset: -5px;
+}
+.ct-center-icon {
+  font-size: 3rem;
+  cursor: pointer;
 }

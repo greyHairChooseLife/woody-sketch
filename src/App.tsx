@@ -10,6 +10,7 @@ import "./App.css";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { IoMenu } from "react-icons/io5";
 import { AiOutlineUser } from "react-icons/ai";
+import { TfiHeadphoneAlt } from "react-icons/tfi";
 
 type PageMode =
   | "home"
@@ -39,6 +40,9 @@ function App() {
         <div className="body_content">
           <Page pageMode={pageMode[1]} setPageMode={changePage} />
         </div>
+        <div className="ct-center">
+          <TfiHeadphoneAlt className="ct-center-icon" />
+        </div>
       </div>
     </>
   );
@@ -53,7 +57,9 @@ const Nav = ({ pageMode, setPageMode }: NavProps) => {
   return (
     <div className="nav_content">
       <div className="nav_flex">
-        <div className="nav_header">Woody Sketch</div>
+        <div className="nav_header" onClick={() => setPageMode("home")}>
+          Woody Sketch
+        </div>
         <div className="nav_buttons">
           <div
             onMouseOver={() => setPageMode("style")}

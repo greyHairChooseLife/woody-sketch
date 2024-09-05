@@ -26,6 +26,7 @@
   background-color: #e3e3e3;
   clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
   text-align: center;
+  cursor: pointer;
 }
 .polygon-container-active {
   position: relative;
