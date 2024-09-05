@@ -6,10 +6,12 @@ import { RxMagnifyingGlass } from "react-icons/rx";
 import { TbCircleArrowUpRightFilled } from "react-icons/tb";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
+import { SlPencil } from "react-icons/sl";
 
 function Chat() {
   const [msgObjects, setMsgObjects] = useState(dummyMessages);
   const [newMessage, setNewMessage] = useState("");
+  const [isStartChat, setIsStartChat] = useState(false);
 
   const onChangeMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewMessage(e.target.value);
@@ -60,33 +62,52 @@ function Chat() {
             1:1 문의
           </button>
         </div>
-        <div className="chat_section2" ref={chatContainerRef}>
-          {msgObjects.map((msgObj) => (
-            <ChatElement
-              key={msgObj.order}
-              userType={msgObj.userType as "user" | "admin"}
-              message={msgObj.message}
-              lastMessageUserType={
-                msgObj.lastMessageUserType as "user" | "admin"
-              }
-            />
-          ))}
-        </div>
-        <div className="chat_section3">
-          <input
-            type="text"
-            placeholder="메시지를 입력하세요."
-            onChange={onChangeMessage}
-            value={newMessage}
-            onKeyDown={(e) => {
-              e.key === "Enter" && onSendMessage();
-            }}
-          />
-          <button onClick={onSendMessage}>
-            보내기
-            <FaPaperPlane className="send_icon" />
-          </button>
-        </div>
+        {!isStartChat && (
+          <div className="chat-not-start">
+            <div>
+              <p>아직 문의를 남기신적이 없으시네요!</p>
+              <p>
+                궁금하신 점이 있으시다면 1:1문의를 통해 언제든지 말씀해주세요.
+              </p>
+            </div>
+            <button onClick={() => setIsStartChat(true)}>
+              <SlPencil className="chat-not-start-icon" />
+              문의하기
+            </button>
+          </div>
+        )}
+
+        {isStartChat && (
+          <>
+            <div className="chat_section2" ref={chatContainerRef}>
+              {msgObjects.map((msgObj) => (
+                <ChatElement
+                  key={msgObj.order}
+                  userType={msgObj.userType as "user" | "admin"}
+                  message={msgObj.message}
+                  lastMessageUserType={
+                    msgObj.lastMessageUserType as "user" | "admin"
+                  }
+                />
+              ))}
+            </div>
+            <div className="chat_section3">
+              <input
+                type="text"
+                placeholder="메시지를 입력하세요."
+                onChange={onChangeMessage}
+                value={newMessage}
+                onKeyDown={(e) => {
+                  e.key === "Enter" && onSendMessage();
+                }}
+              />
+              <button onClick={onSendMessage}>
+                보내기
+                <FaPaperPlane className="send_icon" />
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
