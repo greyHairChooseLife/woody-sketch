@@ -50,7 +50,7 @@ const BigFrontElement = ({ setPageMode }: BigFrontElementProps) => {
       </div>
 
       <div className="home_page_right">
-        <img src="src/assets/down/Subtract.png" />
+        <img src="/woody-sketch/down/Subtract.png" />
       </div>
     </div>
   );

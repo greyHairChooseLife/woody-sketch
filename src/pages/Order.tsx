@@ -28,7 +28,7 @@ function Order() {
           </div>
           <div className="order-info">
             <div className="item">
-              <img />
+              <img src="/woody-sketch/down/TalkMedia_i_85c08de5fe3a.jpg.jpg" />
             </div>
             <div className="order-details">
               <div>컵 받침(주문 제작)</div>

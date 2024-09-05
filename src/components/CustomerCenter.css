@@ -1,5 +1,8 @@
+.ct-center-container {
+  position: relative;
+}
 .ct-center {
-  position: fixed;
+  position: absolute;
   bottom: 2vh;
   right: 2vw;
   border: solid 3px var(--bt);

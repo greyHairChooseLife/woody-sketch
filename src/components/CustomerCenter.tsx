@@ -7,7 +7,7 @@ function CustomerCenter() {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
-    <div>
+    <div className="ct-center-container">
       <div
         className="ct-center"
         onClick={() => {

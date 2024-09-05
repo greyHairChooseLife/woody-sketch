@@ -219,7 +219,6 @@
 .right-three-layout > div:nth-child(1) > div > div {
   width: 250px;
   height: 250px;
-  background-color: white;
   font-size: 1.2rem;
 }
 .right-three-layout > div:nth-child(1) > div > div > img {
@@ -245,12 +244,10 @@
   width: calc(50% - 2px);
   height: 150px;
   object-fit: cover;
-  margin: 1px;
-  border: solid 4px lightgrey;
+  margin: 0 1px;
 }
 .right-three-layout > div:nth-child(2) > div > div {
   width: 250px;
   height: 250px;
-  background-color: white;
   font-size: 1.2rem;
 }

@@ -54,8 +54,9 @@ input {
   white-space: nowrap;
 }
 .home_word_small {
-  font-size: 2rem;
+  font-size: 4rem;
   text-align: center;
+  margin-left: -5rem;
 }
 .home_word_big {
   font-size: 11rem;
@@ -72,7 +73,7 @@ input {
   cursor: pointer;
   margin-top: 1rem;
   width: 20%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .home_page_right {

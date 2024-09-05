@@ -3,27 +3,27 @@ import "./Style.css";
 function Style() {
   const imgListUp = [
     {
-      src: "src/assets/pallet-oke.jpg",
+      src: "/woody-sketch/pallet-oke.jpg",
       name: "오크",
     },
     {
-      src: "src/assets/pallet-adel.jpg",
+      src: "/woody-sketch/pallet-adel.jpg",
       name: "아델",
     },
     {
-      src: "src/assets/pallet-adel.jpg",
+      src: "/woody-sketch/pallet-adel.jpg",
       name: "까사",
     },
     {
-      src: "src/assets/pallet-heri.jpg",
+      src: "/woody-sketch/pallet-heri.jpg",
       name: "헤리티지월넛",
     },
     {
-      src: "src/assets/pallet-pb.jpg",
+      src: "/woody-sketch/pallet-pb.jpg",
       name: "편백",
     },
     {
-      src: "src/assets/pallet-ash.jpg",
+      src: "/woody-sketch/pallet-ash.jpg",
       name: "애쉬",
     },
   ];

@@ -24,7 +24,7 @@
   top: 0;
   padding: 2vw;
   padding-top: 2rem;
-  background: linear-gradient(to right, var(--bg), white);
+  background: transparent;
 }
 .nav_content {
   width: 100%;
