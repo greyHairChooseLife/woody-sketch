@@ -1,5 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import { Stage, Layer, Rect, Circle, Transformer } from "react-konva";
+import {
+  Stage,
+  Layer,
+  Rect,
+  Circle,
+  Line,
+  Ellipse,
+  Transformer,
+} from "react-konva";
 import Konva from "konva";
 import GridLayer from "../components/GridLayer";
 import "./Work.css";
@@ -8,7 +16,7 @@ import { TbCircleDotted } from "react-icons/tb";
 import { FaEraser } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 
-type Tool = "rectangle" | "circle" | null;
+type Tool = "rectangle" | "circle" | "polygon" | null;
 interface Shape {
   type: Tool;
   x: number;
@@ -178,7 +186,9 @@ function Work() {
                       key={index}
                       {...shape}
                       ref={selectedShapeIndex === index ? shapeRef : null}
-                      fill={shape.fillColor || "grey"}
+                      fill={shape.fillColor || ""}
+                      stroke="#990c0b"
+                      strokeWidth={7}
                       draggable
                       onClick={() => handleSelectShape(index)}
                       onTransformEnd={handleDragEnd}
@@ -190,7 +200,9 @@ function Work() {
                       key={index}
                       {...shape}
                       ref={selectedShapeIndex === index ? shapeRef : null}
-                      fill={shape.fillColor || "grey"}
+                      fill={shape.fillColor || ""}
+                      stroke="#990c0b"
+                      strokeWidth={7}
                       draggable
                       onClick={() => handleSelectShape(index)}
                       onTransformEnd={handleDragEnd}
@@ -205,6 +217,37 @@ function Work() {
                   boundBoxFunc={(_, newBox) => newBox}
                 />
               )}
+
+              <Line
+                x={700}
+                y={200}
+                points={[0, 0, 100, -35, 0, -75]}
+                stroke="#990c0b"
+                strokeWidth={5}
+                closed={true}
+              />
+              <Ellipse
+                x={700}
+                y={164}
+                radiusX={15}
+                radiusY={39}
+                stroke="#990c0b"
+                strokeWidth={5}
+                fill="white"
+              />
+              <Line
+                x={500}
+                y={150}
+                points={[
+                  0, 0, 120, 0, 120, 50, 0, 50, 0, 0, 30, -30, 150, -30, 120, 0,
+                  0, 0, 120, 0, 120, 50, 150, 20, 150, -30,
+                ]}
+                stroke="#990c0b"
+                closePath={true}
+                strokeWidth={5}
+                draggable
+              />
+              <Rect fill="yellow" opacity={0.4} />
               {newShape && newShape.type === "rectangle" && (
                 <Rect {...newShape} fill="yellow" opacity={0.4} />
               )}
