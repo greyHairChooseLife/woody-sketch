@@ -24,6 +24,8 @@ function App() {
 
   const changePage = (newPage: PageMode) => {
     const [_, currPage] = pageMode;
+    if (currPage === newPage) return;
+
     setPageMode([currPage, newPage]);
   };
 
