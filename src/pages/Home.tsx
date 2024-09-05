@@ -7,7 +7,7 @@ import designObjects from "../assets/designObjects.json";
 type PageMode = "home" | "work" | "chat" | "profile";
 
 type HomeProps = {
-  setPageMode: Dispatch<SetStateAction<PageMode>>;
+  setPageMode: (newPage: PageMode) => void;
 };
 function Home({ setPageMode }: HomeProps) {
   const todayRecommendObj = designObjects.filter(
@@ -37,7 +37,7 @@ function Home({ setPageMode }: HomeProps) {
 }
 
 type BigFrontElementProps = {
-  setPageMode: Dispatch<SetStateAction<PageMode>>;
+  setPageMode: (newPage: PageMode) => void;
 };
 const BigFrontElement = ({ setPageMode }: BigFrontElementProps) => {
   return (

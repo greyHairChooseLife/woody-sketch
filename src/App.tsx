@@ -1,12 +1,10 @@
-import { useState, Dispatch, SetStateAction } from "react";
+import { useState } from "react";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Chat from "./pages/Chat";
 import Style from "./pages/Style";
 import Profile from "./pages/Profile";
-import UserThumbnail from "./components/UserThumbnail";
 import "./App.css";
-import dummyUser from "./assets/dummyUser.json";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { IoMenu } from "react-icons/io5";
 import { AiOutlineUser } from "react-icons/ai";
@@ -21,9 +19,12 @@ type PageMode =
   | "order";
 
 function App() {
-  const [pageMode, setPageMode] = useState<PageMode>("home");
+  const [pageMode, setPageMode] = useState<PageMode[]>(["home", "home"]);
 
-  const changePage = (page: PageMode) => setPageMode(page);
+  const changePage = (newPage: PageMode) => {
+    const [_, currPage] = pageMode;
+    setPageMode([currPage, newPage]);
+  };
 
   return (
     <>
@@ -32,7 +33,7 @@ function App() {
           <Nav pageMode={pageMode} setPageMode={changePage} />
         </div>
         <div className="body_content">
-          <Page pageMode={pageMode} setPageMode={setPageMode} />
+          <Page pageMode={pageMode[1]} setPageMode={changePage} />
         </div>
       </div>
     </>
@@ -40,16 +41,22 @@ function App() {
 }
 
 type NavProps = {
-  pageMode: PageMode;
+  pageMode: PageMode[];
   setPageMode: (page: PageMode) => void;
 };
 const Nav = ({ pageMode, setPageMode }: NavProps) => {
+  console.log("mode: ", pageMode);
   return (
     <div className="nav_content">
       <div className="nav_flex">
         <div className="nav_header">Woody Sketch</div>
         <div className="nav_buttons">
-          <button onClick={() => setPageMode("style")}>스타일</button>
+          <button
+            onMouseOver={() => setPageMode("style")}
+            onMouseLeave={() => setPageMode(pageMode[0])}
+          >
+            스타일
+          </button>
           <button onClick={() => setPageMode("product")}>전제품</button>
           <button onClick={() => setPageMode("work")}>제품디자인</button>
           <button onClick={() => setPageMode("order")}>제작현황</button>
@@ -75,7 +82,7 @@ const Page = ({
   setPageMode,
 }: {
   pageMode: PageMode;
-  setPageMode: Dispatch<SetStateAction<PageMode>>;
+  setPageMode: (newPage: PageMode) => void;
 }) => {
   if (pageMode === "home") return <Home setPageMode={setPageMode} />;
   else if (pageMode === "style") return <Style />;
