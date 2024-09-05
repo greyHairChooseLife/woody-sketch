@@ -2,6 +2,7 @@ import { useState } from "react";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Product from "./pages/Product";
+import Order from "./pages/Order";
 import Chat from "./pages/Chat";
 import Style from "./pages/Style";
 import Profile from "./pages/Profile";
@@ -78,7 +79,7 @@ const Nav = ({ pageMode, setPageMode }: NavProps) => {
             {pageMode[1] === "work" && <div className="nav_button_point"></div>}
           </div>
           <div>
-            <button onClick={() => setPageMode("order")}>제작현황</button>
+            <button onClick={() => setPageMode("order")}>주문상세</button>
             {pageMode[1] === "order" && (
               <div className="nav_button_point"></div>
             )}
@@ -111,7 +112,7 @@ const Page = ({
   else if (pageMode === "style") return <Style />;
   else if (pageMode === "product") return <Product />;
   else if (pageMode === "work") return <Work />;
-  else if (pageMode === "order") return <Work />;
+  else if (pageMode === "order") return <Order />;
   else if (pageMode === "chat") return <Chat />;
   else if (pageMode === "profile") return <Profile />;
   else return <>Something worng!</>;

@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap");
+@font-face {
+  font-family: "KCC-DodamdodamR";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-DodamdodamR.woff2")
+    format("woff2");
+}
 
 @font-face {
   font-family: "Pretendard-Regular";
