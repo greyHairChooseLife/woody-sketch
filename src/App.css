@@ -78,6 +78,6 @@
 .body_content {
   flex: 9;
   position: relative;
-  margin: 0 5vw;
+  margin: 5vh 5vw;
   overflow-x: hidden;
 }
