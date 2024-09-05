@@ -1,0 +1,18 @@
+.ct-center {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vw;
+  border: solid 3px var(--bt);
+  border-radius: 50%;
+  background-color: white;
+  padding: 10px;
+}
+
+.ct-center:hover {
+  outline: solid 8px var(--bt);
+  outline-offset: -5px;
+}
+.ct-center-icon {
+  font-size: 3rem;
+  cursor: pointer;
+}

@@ -6,11 +6,11 @@ import Order from "./pages/Order";
 import Chat from "./pages/Chat";
 import Style from "./pages/Style";
 import Profile from "./pages/Profile";
+import CustomerCenter from "./components/CustomerCenter";
 import "./App.css";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { IoMenu } from "react-icons/io5";
 import { AiOutlineUser } from "react-icons/ai";
-import { TfiHeadphoneAlt } from "react-icons/tfi";
 
 type PageMode =
   | "home"
@@ -40,9 +40,7 @@ function App() {
         <div className="body_content">
           <Page pageMode={pageMode[1]} setPageMode={changePage} />
         </div>
-        <div className="ct-center">
-          <TfiHeadphoneAlt className="ct-center-icon" />
-        </div>
+        <CustomerCenter />
       </div>
     </>
   );
