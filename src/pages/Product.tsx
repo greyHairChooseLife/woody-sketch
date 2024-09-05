@@ -1,6 +1,6 @@
 import "./Product.css";
 
-function Style() {
+function Product() {
   const productList = {
     인테리어: ["티슈케이스", "책꽂이", "자동차", "열쇠 걸이", "휴대폰 거치대"],
     학용품: ["테이프 커터기", "볼펜", "책갈피", "연필 꽂이"],
@@ -37,4 +37,4 @@ const ProductBox = ({ title, list }: ProductBoxProps) => {
   );
 };
 
-export default Style;
+export default Product;
