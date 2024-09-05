@@ -16,3 +16,32 @@
   font-size: 3rem;
   cursor: pointer;
 }
+
+.ct-board {
+  position: fixed;
+  bottom: 11vh;
+  right: 2vw;
+  background-color: white;
+  padding: 2%;
+  box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.5);
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.ct-board > div {
+  width: 50%;
+  text-align: center;
+  background-color: black;
+  border-radius: 10px;
+  padding: 3%;
+  color: white;
+  font-size: 1.5rem;
+}
+.ct-board-icon {
+  font-size: 2.5rem;
+}
+.ct-board-icon2 {
+  font-size: 2.5rem;
+}
