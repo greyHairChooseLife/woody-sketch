@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import UserThumbnail from "../components/UserThumbnail";
-import dummyUser from "../assets/dummyUser.json";
 import dummyMessages from "../assets/dummyMessages.json";
 import "./Chat.css";
 import { FaPaperPlane } from "react-icons/fa";
+import { RxMagnifyingGlass } from "react-icons/rx";
+import { TbCircleArrowUpRightFilled } from "react-icons/tb";
+import { FaQuestionCircle } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
 
 function Chat() {
   const [msgObjects, setMsgObjects] = useState(dummyMessages);
@@ -38,9 +40,25 @@ function Chat() {
       <div className="chat_layout">
         <div className="chat_section1">
           <div>
-            <UserThumbnail src={dummyUser.thumbnail} size="small" />{" "}
-            <span>{dummyUser.name}</span>님
+            <RxMagnifyingGlass className="chat_section1_icon" />
+            <input placeholder={"궁금한 것을 물어보세요."} />
+            <span className="chat_section1_cancel">취소</span>
+            <span>
+              <TbCircleArrowUpRightFilled /> 요금제
+            </span>
+            <span>
+              <TbCircleArrowUpRightFilled /> 저작권
+            </span>
           </div>
+
+          <button>
+            <FaQuestionCircle className="faq-icon" />
+            FAQ
+          </button>
+          <button>
+            <FaInfoCircle className="on1-icon" />
+            1:1 문의
+          </button>
         </div>
         <div className="chat_section2" ref={chatContainerRef}>
           {msgObjects.map((msgObj) => (
