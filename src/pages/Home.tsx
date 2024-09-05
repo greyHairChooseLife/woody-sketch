@@ -1,6 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
-import { PiTreeFill } from "react-icons/pi";
-import { HiMiniMagnifyingGlassCircle } from "react-icons/hi2";
 import "./Home.css";
 import designObjects from "../assets/designObjects.json";
 
@@ -53,7 +50,7 @@ const BigFrontElement = ({ setPageMode }: BigFrontElementProps) => {
       </div>
 
       <div className="home_page_right">
-        <img src="https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg" />
+        <img src="src/assets/down/Subtract.png" />
       </div>
     </div>
   );
@@ -69,8 +66,10 @@ const Designs = ({ title, elements }: DesignsProps) => {
       <h2>{title}</h2>
       <div className="designs">
         {elements.map((element) => (
-          <div key={element.title} className="design">
-            <img src={element.src} />
+          <div className="design" key={element.title}>
+            <div>
+              <img src={element.src} />
+            </div>
             {element.title}
           </div>
         ))}

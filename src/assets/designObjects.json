@@ -1,32 +1,42 @@
 [
   {
-    "title": "의자",
-    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "title": "책꽂이",
+    "src": "src/assets/down/TalkMedia_i_21f8786286ea.jpg.jpg",
     "type": "todayRecommend"
   },
   {
-    "title": "스피커",
-    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "title": "책갈피",
+    "src": "src/assets/down/TalkMedia_i_4be794fc57ed.jpg.jpg",
     "type": "todayRecommend"
   },
   {
-    "title": "시계",
-    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "title": "볼펜",
+    "src": "src/assets/down/TalkMedia_i_6c50a4ba51b1.jpg.jpg",
     "type": "todayRecommend"
   },
   {
-    "title": "손잡이 의자",
-    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "title": "연필 꽂이",
+    "src": "src/assets/down/TalkMedia_i_8701317ee036.jpg.jpg",
+    "type": "todayRecommend"
+  },
+  {
+    "title": "컵받침",
+    "src": "src/assets/down/TalkMedia_i_cfffd72303e0.jpg.jpg",
     "type": "recentlyViewed"
   },
   {
-    "title": "스피커",
-    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "title": "열쇠 걸이",
+    "src": "src/assets/down/TalkMedia_i_b922254615f3.jpg.jpg",
     "type": "recentlyViewed"
   },
   {
-    "title": "조명",
-    "src": "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg",
+    "title": "도마",
+    "src": "src/assets/down/TalkMedia_i_66446b23993c.jpg.jpg",
+    "type": "recentlyViewed"
+  },
+  {
+    "title": "티슈 케이스",
+    "src": "src/assets/down/TalkMedia_i_051562c7df9c.jpg.jpg",
     "type": "recentlyViewed"
   }
 ]

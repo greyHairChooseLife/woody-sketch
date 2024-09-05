@@ -3,27 +3,27 @@ import "./Style.css";
 function Style() {
   const imgListUp = [
     {
-      src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      src: "src/assets/pallet-oke.jpg",
       name: "오크",
     },
     {
-      src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      src: "src/assets/pallet-adel.jpg",
       name: "아델",
     },
     {
-      src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      src: "src/assets/pallet-adel.jpg",
       name: "까사",
     },
     {
-      src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      src: "src/assets/pallet-heri.jpg",
       name: "헤리티지월넛",
     },
     {
-      src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      src: "src/assets/pallet-pb.jpg",
       name: "편백",
     },
     {
-      src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      src: "src/assets/pallet-ash.jpg",
       name: "애쉬",
     },
   ];
@@ -44,7 +44,7 @@ type ImgBoxProps = {
   name: string;
 };
 
-const ImgBox = ({ src, name }) => {
+const ImgBox = ({ src, name }: ImgBoxProps) => {
   return (
     <div className="style_page_img_box">
       <img src={src} />

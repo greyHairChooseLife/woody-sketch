@@ -160,15 +160,15 @@ const RightThree = () => {
           <h1>최근 본 상품</h1>
           <div>
             <div>
-              <img src="" />
+              <img src="src/assets/down/TalkMedia_i_4be794fc57ed.jpg.jpg" />
               <div>책갈피</div>
             </div>
             <div>
-              <img src="" />
+              <img src="src/assets/down/TalkMedia_i_a3678a0df8cb.jpg.jpg" />
               <div>볼펜</div>
             </div>
             <div>
-              <img src="" />
+              <img src="src/assets/down/TalkMedia_i_a35e7bee7f63.jpg.jpg" />
               <div>도마</div>
             </div>
           </div>
@@ -179,10 +179,10 @@ const RightThree = () => {
             <div>
               <div>
                 <div>
-                  <img src="" />
-                  <img src="" />
-                  <img src="" />
-                  <img src="" />
+                  <img src="src/assets/down/TalkMedia_i_6c50a4ba51b1.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_7fc6ef8dd970.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_ff3e2bd1e26c.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_ef56fa033c4b.jpg.jpg" />
                 </div>
                 <div>
                   <div>
@@ -196,10 +196,10 @@ const RightThree = () => {
             <div>
               <div>
                 <div>
-                  <img src="" />
-                  <img src="" />
-                  <img src="" />
-                  <img src="" />
+                  <img src="src/assets/down/TalkMedia_i_d78d92b46043.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_bef1f764dd85.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_b9279f2006d8.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_b922254615f3.jpg.jpg" />
                 </div>
                 <div>
                   <div>
@@ -213,10 +213,10 @@ const RightThree = () => {
             <div>
               <div>
                 <div>
-                  <img src="" />
-                  <img src="" />
-                  <img src="" />
-                  <img src="" />
+                  <img src="src/assets/down/TalkMedia_i_a3678a0df8cb.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_a35e7bee7f63.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_931988783b33.jpg.jpg" />
+                  <img src="src/assets/down/TalkMedia_i_91a9e998f27d.jpg.jpg" />
                 </div>
                 <div>
                   <div>
