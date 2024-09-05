@@ -29,7 +29,7 @@ function Profile() {
           </div>
         </div>
         <div className="profile_layout_right">
-          <RightTwo />
+          <RightThree />
         </div>
       </div>
     </>
@@ -120,10 +120,84 @@ const RightTwo = () => {
   );
 };
 
-const RightTree = () => {
+const RightThree = () => {
   return (
     <>
-      <div>3</div>
+      <div className="right-three-layout">
+        <div>
+          <h1>최근 본 상품</h1>
+          <div>
+            <div>
+              <img src="" />
+              <div>책갈피</div>
+            </div>
+            <div>
+              <img src="" />
+              <div>볼펜</div>
+            </div>
+            <div>
+              <img src="" />
+              <div>도마</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1>내 서랍</h1>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>
+                <div>
+                  <div>
+                    <div>기본 서랍</div>
+                    <div>찜한 상품 25개</div>
+                  </div>
+                  icon
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>
+                <div>
+                  <div>
+                    <div>소품</div>
+                    <div>찜한 상품 17개</div>
+                  </div>
+                  icon
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>
+                <div>
+                  <div>
+                    <div>학용품</div>
+                    <div>찜한 상품 8개</div>
+                  </div>
+                  icon
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
