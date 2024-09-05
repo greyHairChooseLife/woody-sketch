@@ -50,14 +50,19 @@
   display: flex;
   gap: 3rem;
 }
-
-.nav_flex > button {
-  width: 100%;
-  padding: 0.5rem 1.5rem;
-  text-align: center;
-  writing-mode: horizontal-tb;
-  white-space: nowrap;
+.nav_buttons > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
+.nav_button_point {
+  width: 14px;
+  height: 14px;
+  background-color: var(--bt);
+}
+
 .nav_icon_div {
   display: flex;
   background-color: transparent;

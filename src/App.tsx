@@ -52,20 +52,35 @@ const Nav = ({ pageMode, setPageMode }: NavProps) => {
       <div className="nav_flex">
         <div className="nav_header">Woody Sketch</div>
         <div className="nav_buttons">
-          <button
+          <div
             onMouseOver={() => setPageMode("style")}
             onMouseLeave={() => setPageMode(pageMode[0])}
           >
-            스타일
-          </button>
-          <button
+            <button>스타일</button>
+            {pageMode[1] === "style" && (
+              <div className="nav_button_point"></div>
+            )}
+          </div>
+
+          <div
             onMouseOver={() => setPageMode("product")}
             onMouseLeave={() => setPageMode(pageMode[0])}
           >
-            전제품
-          </button>
-          <button onClick={() => setPageMode("work")}>제품디자인</button>
-          <button onClick={() => setPageMode("order")}>제작현황</button>
+            <button>전제품</button>
+            {pageMode[1] === "product" && (
+              <div className="nav_button_point"></div>
+            )}
+          </div>
+          <div>
+            <button onClick={() => setPageMode("work")}>제품디자인</button>
+            {pageMode[1] === "work" && <div className="nav_button_point"></div>}
+          </div>
+          <div>
+            <button onClick={() => setPageMode("order")}>제작현황</button>
+            {pageMode[1] === "order" && (
+              <div className="nav_button_point"></div>
+            )}
+          </div>
         </div>
         <div className="nav_icon_div">
           <div>
