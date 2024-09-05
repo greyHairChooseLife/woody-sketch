@@ -27,6 +27,15 @@
   clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
   text-align: center;
 }
+.polygon-container-active {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  height: 5rem;
+  background-color: #fec200;
+  clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
+  text-align: center;
+}
 
 .polygon-container-icon {
   font-size: 5rem;

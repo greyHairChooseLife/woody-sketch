@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Profile.css";
 
 import { CiFolderOn } from "react-icons/ci";
@@ -5,31 +6,62 @@ import { HiOutlineCloudArrowUp } from "react-icons/hi2";
 import { FaHeart } from "react-icons/fa";
 
 function Profile() {
+  const [mode, setMode] = useState<"one" | "two" | "three">("one");
+
   return (
     <>
       <div className="profile_layout">
         <div className="profile_layout_left">
           <div>
-            <div className="polygon-container">
+            <div
+              className={
+                mode === "one"
+                  ? "polygon-container-active"
+                  : "polygon-container"
+              }
+              onClick={() => {
+                setMode("one");
+              }}
+            >
               <CiFolderOn className="polygon-container-icon" />
             </div>
             <div className="polygon-container-title">내 작업</div>
           </div>
           <div>
-            <div className="polygon-container">
+            <div
+              className={
+                mode === "two"
+                  ? "polygon-container-active"
+                  : "polygon-container"
+              }
+              onClick={() => {
+                setMode("two");
+              }}
+            >
               <HiOutlineCloudArrowUp className="polygon-container-icon" />
             </div>
             <div className="polygon-container-title">커뮤니케이션</div>
           </div>
           <div>
-            <div className="polygon-container">
+            <div
+              className={
+                mode === "three"
+                  ? "polygon-container-active"
+                  : "polygon-container"
+              }
+              onClick={() => {
+                setMode("three");
+              }}
+            >
               <FaHeart className="polygon-container-icon polygon-container-icon-heart" />
             </div>
             <div className="polygon-container-title">찜</div>
           </div>
         </div>
         <div className="profile_layout_right">
-          <RightThree />
+          {mode === "one" && <RightOne />}
+          {mode === "two" && <RightTwo />}
+          {mode === "three" && <RightThree />}
         </div>
       </div>
     </>
