@@ -90,7 +90,10 @@ const Nav = ({ pageMode, setPageMode }: NavProps) => {
             <FaMagnifyingGlass className="nav_icons nav_icons_FaMagnifyingGlass" />
           </div>
           <div>
-            <AiOutlineUser className="nav_icons nav_icons_AiOutlineUser" />
+            <AiOutlineUser
+              className="nav_icons nav_icons_AiOutlineUser"
+              onClick={() => setPageMode("profile")}
+            />
           </div>
           <div>
             <IoMenu className="nav_icons nav_icons_IoMenu" />
